@@ -1,23 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// class searchBar extends Component {
-//   constructor(props) {
-//     super(props);
+class SearchBar extends Component {
+  handleSearch = (event) => {
+    this.props.searchFunction(event.currentTarget.value);
+  }
 
-//     this.state = {
+  render () {
+    return <input className="form-search form-control" type="text" placeholder="Search.." onChange={this.handleSearch} />;
+  }
+}
 
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <input className="form-search" type="text" placeholder="Search.." />
-//     );
-//   }
-// }
-
-const SearchBar = () => {
-  return <input className="form-search form-control" type="text" placeholder="Search.." />;
-};
 
 export default SearchBar;
